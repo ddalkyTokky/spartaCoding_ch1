@@ -91,7 +91,7 @@ buttons.forEach(button => {
                                 console.log("yes protocol")
                             } else {
                                 console.log("no protocol")
-                                if(filledData.github.length==0)
+                                if(filledData.github.length==1)
                                 {
                                     filledData.github=null
                                 }
@@ -111,7 +111,7 @@ buttons.forEach(button => {
                                 console.log("yes protocol")
                             } else {
                                 console.log("no protocol")
-                                if(filledData.blog.length==0)
+                                if(filledData.blog.length==1)
                                 {
                                     filledData.blog=null
                                 }
