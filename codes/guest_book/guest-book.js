@@ -7,10 +7,10 @@ import {
 } from "./firebase.js";
 
 const selector = (element) => document.querySelector(element);
-const guestbookTemplate = (id, author, content) => {
+const guestbookTemplate = (id, author, content, date) => {
   selector(
     "#itemList"
-  ).innerHTML += `<div class="item" id="${id}"><p class="author">${author}</p><img class="cancle" src="../../photos/cancle.svg" alt="${author}의 방명록 수정을 취소하는 아이콘"><img class="insert" src="../../photos/pencil.svg" alt="${author}의 방명록을 수정하는 아이콘"><img class="update" src="../../photos/send.svg" alt="${author}의 수정한 방명록을 등록하는 아이콘"><img class="delete" src="../../photos/trash.svg" alt="${author}의 방명록을 삭제하는 아이콘"><p class="content">${content}</p></div>`;
+  ).innerHTML += `<div class="item" id="${id}"><span class="date">${date}</span><p class="author">${author}</p><img class="cancle" src="../../photos/cancle.svg" alt="${author}의 방명록 수정을 취소하는 아이콘"><img class="insert" src="../../photos/pencil.svg" alt="${author}의 방명록을 수정하는 아이콘"><img class="update" src="../../photos/send.svg" alt="${author}의 수정한 방명록을 등록하는 아이콘"><img class="delete" src="../../photos/trash.svg" alt="${author}의 방명록을 삭제하는 아이콘"><p class="content">${content}</p></div>`;
 };
 let isLoading = true;
 let isCreateTextarea = false;
@@ -41,15 +41,23 @@ window.addEventListener("DOMContentLoaded", async () => {
   docs.forEach((doc) => {
     const id = doc.id;
     const row = doc.data();
+    const date = [...row["createdAt"].slice(0, 16)];
 
-    guestbookTemplate(id, row["author"], row["content"]);
+    if (Number(date[12]) + 9 > 9) {
+      date[11] = "";
+      date[12] = Number(date[12]) + 9;
+    }
+
+    const dateResult = date.join("");
+
+    guestbookTemplate(id, row["author"], row["content"], dateResult);
   });
 
   const deleteItems = document.querySelectorAll(".delete");
   deleteItems.forEach((item) => {
     item.addEventListener("click", async function () {
       const user = getCookie("user");
-      const author = this.parentNode.childNodes[0].textContent;
+      const author = this.parentNode.childNodes[1].textContent;
 
       if (user !== author) {
         return alert("삭제 권한이 없습니다.");
@@ -69,7 +77,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   insertItems.forEach((item) => {
     item.addEventListener("click", function () {
       const user = getCookie("user");
-      const author = item.parentNode.firstChild.innerText;
+      const author = item.parentNode.childNodes[1].textContent;
 
       if (user !== author) {
         return alert("수정 권한이 없습니다.");
@@ -83,6 +91,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
         item.parentNode.removeChild(item.parentNode.lastChild);
 
+        item.parentNode.firstChild.style.display = "none";
         item.previousSibling.style.display = "block";
         item.nextSibling.style.display = "block";
         item.style.display = "none";
@@ -128,8 +137,9 @@ document.addEventListener("click", async (e) => {
 
   if (e.target.className === "cancle") {
     e.target.style.display = "none";
-    e.target.parentNode.childNodes[2].style.display = "block";
-    e.target.parentNode.childNodes[3].style.display = "none";
+    e.target.parentNode.firstChild.style.display = "block";
+    e.target.parentNode.childNodes[3].style.display = "block";
+    e.target.parentNode.childNodes[4].style.display = "none";
 
     e.target.parentNode.removeChild(e.target.parentNode.lastChild);
 
