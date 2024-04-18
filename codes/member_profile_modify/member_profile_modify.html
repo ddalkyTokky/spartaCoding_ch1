@@ -102,12 +102,12 @@
                 if ($("#photo").val() !== '') {
                     data["photo"] = $("#photo").val();
                 }
-
+                
                 // alert("hello")
                 // alert(doc_name);
                 await updateDoc(doc(db, "members", doc_name), data);
                 alert("저장완료");
-                window.location.href = "../mainpage/mainpage.html";
+                window.location.href = "../member/member.html";
             })
 
             //=========================================

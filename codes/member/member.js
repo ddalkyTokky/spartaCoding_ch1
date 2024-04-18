@@ -111,9 +111,7 @@ buttons.forEach(button => {
                                 console.log("yes protocol")
                             } else {
                                 console.log("no protocol")
-                                console.log(filledData.blog)
-                                console.log(filledData.blog.length)
-                                if(filledData.blog ="\0")
+                                if(filledData.blog.length==0)
                                 {
                                     filledData.blog=null
                                 }
