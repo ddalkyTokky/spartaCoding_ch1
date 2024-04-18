@@ -91,7 +91,7 @@ buttons.forEach(button => {
                                 console.log("yes protocol")
                             } else {
                                 console.log("no protocol")
-                                if(filledData.github ="\0")
+                                if(filledData.github.length==0)
                                 {
                                     filledData.github=null
                                 }
