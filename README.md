@@ -11,6 +11,10 @@
 스파르타코딩클럽 Kotlin 2기 골댕이(7조)의 팀원들의 프로필과 방문 소감을 작성할 수 있는 방명록을 제공하는 서비스
 <br/>
 
+![image](https://github.com/spartaCodingGoldangyi/miniproject/assets/47583083/0f8c9cd6-1366-4bd8-a2d5-114825d7af73)
+![image](https://github.com/spartaCodingGoldangyi/miniproject/assets/47583083/f898178c-c25f-44db-aeb9-a3a99455b690)
+![image](https://github.com/spartaCodingGoldangyi/miniproject/assets/47583083/7ff8d3dc-4367-4511-b34c-845d3845a170)
+
 ---
 ## 프로젝트 기간
 2024.04.16 ~ 2024.04.18 (3일)
@@ -52,3 +56,5 @@
 + Tool, 버전관리
   + <img src="https://img.shields.io/badge/VScode-007ACC?style=flat-square&logo=visualstudiocode&logoColor=fff"/> <img src="https://img.shields.io/badge/git-F05032?style=flat-square&logo=git&logoColor=FFFFFF"/>
 
+![image](https://github.com/spartaCodingGoldangyi/miniproject/assets/47583083/c3be596d-ff7c-4384-a9e5-26b1eecf0640)
+![image](https://github.com/spartaCodingGoldangyi/miniproject/assets/47583083/bb70e175-6989-42a4-a12f-081b14191ee1)
