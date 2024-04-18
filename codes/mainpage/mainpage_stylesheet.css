@@ -1,0 +1,62 @@
+.nav-item > button {
+  margin: 0px 10px 0px 10px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 100vh; */
+  margin: 50px auto 50px auto;
+}
+
+.acrylic {
+  padding: 4em 6em;
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  margin: 7px;
+
+  width: 60%;
+  text-align: center;
+}
+
+body {
+  background-image: url("../../photos/grass.jpg");
+  background-size: cover;
+
+  background-attachment: fixed;
+  margin: 200px 0px 0px 0px;
+  font: 1em/1.4 Sans-serif;
+  color: #fff;
+}
+
+div > h1 {
+  font-size: 72px;
+}
+
+#logo.acrylic {
+  padding: 4em 6em;
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  margin: 7px;
+
+  width: 800px;
+
+  text-align: center;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 20px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}

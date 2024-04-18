@@ -1,0 +1,106 @@
+.main-container {
+  width: 50%;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 20px;
+  margin: auto;
+  padding: 50px 50px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+}
+.title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 50px;
+}
+.input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+.input-box > p {
+  margin: 0;
+}
+#content {
+  resize: none;
+}
+#send {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: rgb(248, 255, 183);
+}
+.author {
+  width: 100%;
+  height: 50px;
+  line-height: 25px;
+  border: 1px solid black;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0px;
+}
+.content {
+  width: 100%;
+  height: 100%;
+  min-height: 100px;
+  border: 1px solid black;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-sizing: border-box;
+  padding: 10px 10px;
+}
+.item {
+  position: relative;
+  margin-bottom: 20px;
+}
+.item > .update {
+  display: none;
+}
+.item > .insert, .update {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 15px;
+  right: 40px;
+}
+.item > .delete {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+}
+.item > .cancle {
+  display: none;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 15px;
+  left: 10px;
+}
+.item > textarea {
+  width: 100%;
+  resize: none;
+}
+
+.nav-item > button {
+  margin: 0px 10px 0px 10px;
+}
+
+body {
+  background-image: url("../../photos/grass.jpg");
+  background-size: cover;
+
+  background-attachment: fixed;
+  margin: 200px 0px 0px 0px;
+  font: 1em/1.4 Sans-serif;
+  color: #fff;
+}

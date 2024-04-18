@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset = "UTF-8" <meta name = "viewport" content=""width =
+    device-width, initial-scale = 1.0">
+    <title>골댕이</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="mainpage_stylesheet.css" />
+    <script type="module">
+      function getCookie(cookieName) {
+        let matches = document.cookie.match(
+          new RegExp(
+            "(?:^|; )" +
+              cookieName.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") +
+              "=([^;]*)"
+          )
+        );
+        return matches ? decodeURIComponent(matches[1]) : undefined;
+      }
+
+      let usernameSignedIn = getCookie("user");
+      $("#signButton").text(
+        typeof usernameSignedIn !== "undefined" && usernameSignedIn.length !== 0
+          ? "로그아웃"
+          : "로그인"
+      );
+      $("#signButton").click(async function () {
+        if (
+          typeof usernameSignedIn !== "undefined" &&
+          usernameSignedIn.length !== 0
+        ) {
+          document.cookie = 'user=; expires=Thu, 01 Jan 1999 00:00:10 GMT; path=/';
+          location.href = "../mainpage/mainpage.html";
+        } else location.href = "../login/login.html";
+      });
+    </script>
+  </head>
+  <body>
+    <!-- navbar starts here -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="w-100 order-1 order-md-0">
+        <div class="container">
+          <a class="navbar-brand" href="https://spartacodingclub.kr/">
+            <img
+              src="https://static.spartacodingclub.kr/TeamSparta-Inc/scc-frontend/assets/icons/logo-active.png"
+              height="56"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="mx-auto order-0">
+        <a class="navbar-brand mx-auto" href="../mainpage/mainpage.html"
+          >우 리 는&nbsp;&nbsp;&nbsp;골 댕 이 를&nbsp;&nbsp;&nbsp;사 랑 해</a
+        >
+      </div>
+      <div class="navbar-collapse w-100 order-3">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <button
+              type="button"
+              class="btn btn-outline-light"
+              id="signButton"
+            ></button>
+          </li>
+          <li class="nav-item">
+            <button
+              type="button"
+              class="btn btn-outline-light"
+              onclick="location.href = '../member/member.html'"
+            >
+              팀원 소개
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              type="button"
+              class="btn btn-outline-light"
+              onclick="location.href = '../guest_book/guest_book.html'"
+            >
+              방명록
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- navbar ends here -->
+
+    <!-- Unit logos starts here  -->
+    <main>
+      <div class="acrylic shadow" id="logo">
+        <div class="row">
+          <div class="column">
+            <img
+              src="../../photos/Sparta_Coding_Club.png"
+              alt="Sparta_Coding_Club"
+              style="width: 100%"
+            />
+          </div>
+          <div class="column">
+            <img
+              src="../../photos/Kotlin_Spring.png"
+              alt="Kotlin_Spring"
+              style="width: 100%"
+            />
+          </div>
+          <div class="column">
+            <img
+              src="../../photos/Hong_Jin_Ho_Hong_Jin_Ho.png"
+              alt="Hong_Jin_Ho_Hong_Jin_Ho"
+              style="width: 100%"
+            />
+          </div>
+          <div class="column">
+            <img
+              src="../../photos/Golden_Retriever.png"
+              alt="Golden_Retriever"
+              style="width: 100%"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Unit logos ends here  -->
+
+    <!-- Team declaration starts here  -->
+    <main>
+      <div class="acrylic shadow">
+        <h1>팀 선언문</h1>
+        <br />
+        <h2>우리의 목표</h2>
+        <br />
+        우리는 같은 조로 있는 1+주일 동안 개를 좋아하고, 골든 리트리버를
+        좋아하며, 그를 닮기로 했습니다.<br />
+        우리는 이에 다음과 같이 선언합니다.<br />
+        <br />
+
+        <b>하나. 골든 리트리버처럼</b>, 우리는 코드를 만들다 화가 나도 99번까지
+        참을 것입니다.<br />
+        <b>하나. 골든 리트리버처럼</b>, 우리는 주어진 과제의 기한을 절대적으로
+        준수할 것입니다.<br />
+        <b>하나. 골든 리트리버처럼</b>, 우리는 활발하게 계획하고 움직일
+        것입니다.<br />
+        <b>하나. 골든 리트리버처럼</b>, 우리는 다른 동료들이 헤맬 때 나서서 도울
+        것입니다. <br /><br /><br />
+        <h2>우리의 약속</h2>
+        <br />
+        우리 골댕이 조원들은 각자가 하나씩 발제하여 모두가 지킬 것들을 다음과
+        같이 선언합니다.<br />
+        <br />
+
+        <b>하나.</b> 우리는 계획을 엉망진창 같아 보이더라도 세우고 실행할
+        것입니다.<br />
+        <b>하나.</b> 우리는 기한을 최대한 준수하며, 불가피한 상황에 대하여 다른
+        조원들에게 공지할 것입니다.<br />
+        <b>하나.</b> 우리는 조원이 가지는 질문에 바쁘더라도 대답할 것입니다.<br />
+        <b>하나.</b> 우리는 안 된다고 포기하지 않고 도움을 요청하며 이를
+        지나치지 않을 것입니다.<br />
+        <b>하나.</b> 우리는 서로의 안녕을 물어보며 챙길 것입니다.<br />
+        <b>하나.</b> 우리는 서로에게 아낌없는 피드백을 줄 것입니다.<br />
+        <b>하나.</b> 우리는 어떤 압박에도 항상 할 수 있다는 마음을 가질
+        것입니다.
+      </div>
+    </main>
+    <!-- Team declaration ends here  -->
+  </body>
+</html>

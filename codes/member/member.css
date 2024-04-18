@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+* {
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+
+    color: #31344b;
+    font-size: 17px;
+}
+
+body {
+    background-image: url("../../photos/grass.jpg");
+    background-size: cover;
+
+    background-attachment: fixed;
+    margin: 200px 0px 0px 0px;
+    font: 1em/1.4 Sans-serif;
+    color: #fff;
+}
+
+.nav-item>button {
+    margin: 0px 10px 0px 10px;
+}
+
+.view {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto 50px auto;
+
+    width: 1000px;
+    height: 550px;
+
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+
+}
+
+.teamlist {
+    width: 200px;
+    height: 550px;
+
+    background-color: #ffc851;
+    padding: 20px;
+    border: none;
+    border-radius: 8px;
+}
+
+.teamlist .dogImg {
+    height: 50px;
+    width: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.teamlist .list {
+    height: 420px;
+    overflow: auto;
+    background:#ffebbe;
+    padding:10px;
+    border-radius: 8px;
+}
+
+.teamlist .list::-webkit-scrollbar {
+    padding: 2px;
+    border-radius: 8px;
+    width: 8px;
+}
+
+.teamlist .list::-webkit-scrollbar-thumb {
+    height: 30%;
+    background: #ffd77f;
+    border-radius: 25px;
+}
+
+.teamlist .list::-webkit-scrollbar-track {
+    background:#ffebbe;
+    padding: 2px;
+    border-radius: 8px;
+}
+
+.list>button {
+    background: white;
+}
+
+.teambtn {
+    height: 50px;
+    width: 100%;
+
+    background-color: whitesmoke;
+
+    border: none;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 20px;
+    margin-top: 5px;
+}
+
+.main {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 700px;
+    height: 550px;
+    margin: 50px;
+
+}
+
+.front-card .mem-name,
+.front-card .mem-mbti,
+.back-card .mem-stack,
+.back-card .mem-hobby,
+.back-card .mem-self-intro,
+.back-card .mem-sw,
+.back-card .mem-coop-style,
+.back-card .mem-note {
+
+    font-style: normal;
+    margin: 10px 0 5px 0;
+}
+
+
+
+.front-card {
+    background: #ffffff;
+    transform: rotate(-10deg);
+    z-index: 1;
+
+    border: solid 1px #808080;
+    box-shadow: 3px 3px 5px rgb(39, 39, 39);
+
+    position: relative;
+    width: 300px;
+    height: 450px;
+    padding: 10px;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.back-card {
+    background: #ffdb8d;
+    z-index: 0;
+
+    border: solid 1px #808080;
+    box-shadow: 3px 3px 5px rgb(39, 39, 39);
+
+    position: relative;
+    width: 300px;
+    height: 450px;
+    padding:10px;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.back-card .area{
+    height: 420px;
+    width:250px;
+    overflow: auto;
+    border-radius: 8px;
+    padding:10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.back-card .area::-webkit-scrollbar {
+    padding: 2px;
+    border-radius: 8px;
+    width: 8px;
+}
+
+.back-card .area::-webkit-scrollbar-thumb {
+    height: 30%;
+    background: #ffbf34;
+    border-radius: 25px;
+}
+
+.back-card .area::-webkit-scrollbar-track {
+    background:#ffebbe;
+    padding: 2px;
+    border-radius: 8px;
+}
+
+
+.mem-self-intro,
+.mem-hobby,
+.mem-sw,
+.mem-stack,
+.mem-coop-style,
+.mem-note {
+    text-align: left;
+}
+
+
+.front-card .social-ic .github-img,
+.front-card .social-ic .blog-img,
+.front-card .social-ic .email-img {
+    width: 30px;
+    height: 30px;
+}
+
+.front-card .social-ic {
+    margin: 15px 0 25px 0;
+}
+
+
+.mem-img>img {
+    width: 200px;
+    height: 200px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+    object-fit: cover;
+}
+
+
+.btnimg{
+    width:50px;
+    height:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    bottom:30px;
+    right:30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+}

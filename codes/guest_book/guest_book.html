@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./guest-book.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="module" src="./firebase.js"></script>
+    <script type="module" src="./guest-book.js"></script>
+    <title>방명록</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- 헤더 영역 시작 -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="w-100 order-1 order-md-0">
+          <div class="container">
+            <a class="navbar-brand" href="https://spartacodingclub.kr/">
+              <img
+                src="https://static.spartacodingclub.kr/TeamSparta-Inc/scc-frontend/assets/icons/logo-active.png"
+                height="56"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="mx-auto order-0">
+          <a class="navbar-brand mx-auto" href="../mainpage/mainpage.html"
+            >우 리 는&nbsp;&nbsp;&nbsp;골 댕 이 를&nbsp;&nbsp;&nbsp;사 랑 해</a
+          >
+        </div>
+        <div class="navbar-collapse w-100 order-3">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <button
+                type="button"
+                class="btn btn-outline-light"
+                id="signButton"
+              >
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                type="button"
+                class="btn btn-outline-light"
+                onclick="location.href = '../member/member.html'"
+              >
+                팀원 소개
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                type="button"
+                class="btn btn-outline-light"
+                onclick="location.href = 'guest_book.html'"
+              >
+                방명록
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- 헤더 영역 끝 -->
+      <h1 class="title">방명록</h1>
+      <!-- 방명록 등록 시작 -->
+      <form class="input-box">
+        <p>
+          <span>작성자 : </span>
+          <span id="author"></span>
+        </p>
+        <textarea name="content" id="content" cols="30" rows="10"></textarea>
+        <button id="send">등록</button>
+      </form>
+      <!-- 방명록 등록 끝 -->
+      <!-- 방명록 목록 추가-->
+      <div id="itemList"></div>
+    </div>
+  </body>
+</html>

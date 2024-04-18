@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Member Profile</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../mainpage/mainpage_stylesheet.css" />
+
+    <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        import { updateDoc, doc, getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+        import firebaseConfig from "../fbconfig.js";
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        function getCookie(name) {
+            let matches = document.cookie.match(new RegExp(
+                "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+            ));
+            return matches ? decodeURIComponent(matches[1]) : undefined;
+        }
+
+        // window.document.cookie = "user=tnsdyd6933"
+        // window.document.cookie = "dfdf=tnsdyd6933"
+
+        // 쿠키 가져와서 로그인 정보가 있는지 판단.
+        let doc_name = getCookie("user");
+
+        // 없다면, 로그인 페이지로 돌아감.
+        if (doc_name === undefined) {
+            alert("로그인 먼저 하세요!");
+            window.location.href = '../login/login.html'
+        }
+        $("#signButton").text(
+        typeof doc_name !== "undefined" && doc_name.length !== 0
+          ? "로그아웃"
+          : "로그인"
+        );
+        // 로그인 됐다. => 쿠키에 저장되어있던 문서 이름을 기반으로 필드를 수정할 것.
+        document.getElementById("editForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Save data to Firestore
+            $('#saveBtn').click(async function () {
+                let data = {}
+
+                if ($("#name").val() !== '') {
+                    data["name"] = $("#name").val();
+                }
+
+                if ($("#mbti").val() !== '') {
+                    data["mbti"] = $("#mbti").val();
+                }
+
+                if ($("#email").val() !== '') {
+                    data["email"] = $("#email").val();
+                }
+
+                if ($("#blog").val() !== '') {
+                    data["blog"] = $("#blog").val();
+                }
+
+                if ($("#github").val() !== '') {
+                    data["github"] = $("#github").val();
+                }
+
+                if ($("#coopStyle").val() !== '') {
+                    data["coopStyle"] = $("#coopStyle").val();
+                }
+
+                if ($("#goodBad").val() !== '') {
+                    data["goodBad"] = $("#goodBad").val();
+                }
+
+                if ($("#hobby").val() !== '') {
+                    data["hobby"] = $("#hobby").val();
+                }
+
+                if ($("#intro").val() !== '') {
+                    data["intro"] = $("#intro").val();
+                }
+
+                if ($("#oneWord").val() !== '') {
+                    data["oneWord"] = $("#oneWord").val();
+                }
+
+                if ($("#techStack").val() !== '') {
+                    data["techStack"] = $("#techStack").val();
+                }
+
+                if ($("#photo").val() !== '') {
+                    data["photo"] = $("#photo").val();
+                }
+
+                // alert("hello")
+                // alert(doc_name);
+                await updateDoc(doc(db, "members", doc_name), data);
+                alert("저장완료");
+                window.location.href = "../mainpage/mainpage.html";
+            })
+
+            //=========================================
+
+            // const mbti = document.getElementById("mbti").value;
+            // const github = document.getElementById("github").value;
+            // const blog = document.getElementById("blog").value;
+            // const email = document.getElementById("email").value;
+            // const hobby = document.getElementById("hobby").value;
+            // const about = document.getElementById("about").value;
+            // const prosCons = document.getElementById("prosCons").value;
+            // const profilePic = document.getElementById("profilePic").files[0];
+
+
+            // Save data to Firestore
+            // $('#saveBtn').click(async function () {
+            //     let doc = {};
+            //     await addDoc(collection(db, "memberProfile"), doc);
+            // } )
+
+            // For demonstration, let's log the values to console
+            // console.log("MBTI:", mbti);
+            // console.log("GitHub:", github);
+            // console.log("Blog:", blog);
+            // console.log("Email:", email);
+            // console.log("Hobby:", hobby);
+            // console.log("About Me:", about);
+            // console.log("Own Pros and Cons:", prosCons);
+            // console.log("Profile Picture:", profilePic);
+        });
+
+        $("#signButton").click(async function () {
+          if (
+            typeof doc_name !== "undefined" &&
+            doc_name.length !== 0
+          ) {
+            document.cookie = 'user=; expires=Thu, 01 Jan 1999 00:00:10 GMT; path=/';
+            location.href = "../mainpage/mainpage.html";
+          } else location.href = "../login/login.html";
+        });
+    </script>
+
+    <link rel="stylesheet" href="member_profile_modify_Style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="w-100 order-1 order-md-0">
+          <div class="container">
+            <a class="navbar-brand" href="https://spartacodingclub.kr/">
+              <img
+                src="https://static.spartacodingclub.kr/TeamSparta-Inc/scc-frontend/assets/icons/logo-active.png"
+                height="56"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="mx-auto order-0">
+          <a class="navbar-brand mx-auto" href="../mainpage/mainpage.html"
+            >우 리 는&nbsp;&nbsp;&nbsp;골 댕 이 를&nbsp;&nbsp;&nbsp;사 랑 해</a>
+        </div>
+        <div class="navbar-collapse w-100 order-3">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <button
+                type="button"
+                class="btn btn-outline-light"
+                id="signButton"
+              ></button>
+            </li>
+            <li class="nav-item">
+              <button
+                type="button"
+                class="btn btn-outline-light"
+                onclick="location.href = '../member/member.html'">
+                팀원 소개
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                type="button"
+                class="btn btn-outline-light"
+                onclick="location.href = '../guest_book/guest_book.html'">
+                방명록
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+    <div class="container2">
+        <h4>팀원 정보 수정</h4>
+
+        <form id="editForm">
+
+            <label for="name">이름:</label>
+            <input type="text" id="name" placeholder="홍길동">
+
+            <label for="mbti">mbti:</label>
+            <input type="text" id="mbti" placeholder="ExFx">
+
+            <label for="email">email:</label>
+            <input type="text" id="email" placeholder="email@email.com">
+
+            <label for="blog">blog:</label>
+            <input type="text" id="blog" placeholder="https://">
+
+            <label for="github">github:</label>
+            <input type="text" id="github" placeholder="https://">
+
+            <label for="coopStyle">협업스타일:</label>
+            <input type="text" id="coopStyle" placeholder="">
+
+            <label for="goodBad">장단점:</label>
+            <input type="text" id="goodBad" placeholder="">
+
+            <label for="hobby">취미:</label>
+            <input type="text" id="hobby" placeholder="">
+
+            <label for="intro">자기소개:</label>
+            <input type="text" id="intro" placeholder="">
+
+            <label for="oneWord">각오한마디:</label>
+            <input type="text" id="oneWord" placeholder="">
+
+            <label for="techStack">기술스택:</label>
+            <input type="text" id="techStack" placeholder="">
+
+            <label for="photo">사진링크:</label>
+            <input type="text" id="photo" placeholder="../../photos/파일이름.jpg">
+
+            <button id="saveBtn" type="submit">Save</button>
+        </form>
+    </div>
+
+    <!--<script src="member_profile_modify_script.js"></script>-->
+</body>
+
+</html>

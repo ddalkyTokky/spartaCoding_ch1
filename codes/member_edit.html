@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cerulean/bootstrap.min.css"
+          integrity="sha384-3fdgwJw17Bi87e1QQ4fsLn4rUFqWw//KU0g8TvV6quvahISRewev6/EocKNuJmEw" crossorigin="anonymous">
+
+    <title>팀원소개수정하기</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+    </script>
+</head>
+
+<body>
+<h1 align="center">팀원 정보 수정</h1>
+
+<div id="wrapper" style="margin-left: 10%; margin-right: 10%;">
+    <form action="" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <div class="input-group">
+                <input name="id" type="text" class="form-control" placeholder="ID" value="${id}" readonly style="background-color: white;">
+                <input name="pw" type="password" class="form-control" placeholder="password" value="${pw}"><br>
+            </div>
+
+            <div class="input-group">
+                <input name="name" type="text" class="form-control" placeholder="이름" value="${name}" readonly style="background-color: white;">
+                <input name="mbit" type="text" class="form-control" placeholder="MBTI" value="${mbti}">
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">github</span>
+                <input name="github" type="text" class="form-control" placeholder="github" value="${github}">
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">blog</span>
+                <input name="blog" type="text" class="form-control" placeholder="blog" value="${blog}">
+            </div>
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">email</span>
+                <input name="email" type="email" class="form-control" placeholder="example1@xxx.xxx"
+                       value="${email}">
+            </div>
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">email</span>
+                <input name="hobby" type="text" class="form-control" placeholder="취미"
+                       value="${hobby}">
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">자기소개</span>
+                <textarea name="intro" class="form-control" id="exampleTextarea" rows="3">${intro}</textarea>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">장단점</span>
+                <textarea name="goodBad" class="form-control" id="exampleTextarea" rows="3">${goodBad}</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="formFile" class="form-label mt-4">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">프로필사진</font>
+                    </font>
+                </label>
+                <input name="photo" class="form-control" type="file" id="formFile">
+            </div>
+
+        </fieldset>
+        <div>
+            코딩스타일, 자기소개, 기술스택
+        </div>
+        <div>
+            <button type="submit" id="submitBtn">수정</button>
+            <button type="button" id="removeBtn">취소</button>
+        </div>
+
+    </form>
+
+</div>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cerulean/bootstrap.min.css"
+        integrity="sha384-3fdgwJw17Bi87e1QQ4fsLn4rUFqWw//KU0g8TvV6quvahISRewev6/EocKNuJmEw" crossorigin="anonymous">
+
+    <title>팀원소개수정하기</title>
+</head>
+
+<body>
+    <h1 align="center">팀원 정보 수정</h1>
+
+    <div id="wrapper" style="margin-left: 10%; margin-right: 10%;">
+        <form action="" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <div class="input-group">
+                    <input name="id" type="text" class="form-control" placeholder="ID" value="${id}" readonly style="background-color: white;">
+                    <input name="pw" type="password" class="form-control" placeholder="password" value="${pw}"><br>
+                </div>
+
+                <div class="input-group">
+                    <input name="name" type="text" class="form-control" placeholder="이름" value="${name}" readonly style="background-color: white;">
+                    <input name="mbit" type="text" class="form-control" placeholder="MBTI" value="${mbti}">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">github</span>
+                    <input name="github" type="text" class="form-control" placeholder="github" value="${github}">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">blog</span>
+                    <input name="blog" type="text" class="form-control" placeholder="blog" value="${blog}">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">email</span>
+                    <input name="email" type="email" class="form-control" placeholder="example1@xxx.xxx"
+                        value="${email}">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">email</span>
+                    <input name="hobby" type="text" class="form-control" placeholder="취미"
+                        value="${hobby}">
+                </div>
+
+                <div class="input-group">   
+                    <span class="input-group-text" id="basic-addon1">자기소개</span>
+                    <textarea name="intro" class="form-control" id="exampleTextarea" rows="3">${intro}</textarea>
+                </div>
+
+                <div class="input-group">   
+                    <span class="input-group-text" id="basic-addon1">장단점</span>
+                    <textarea name="goodBad" class="form-control" id="exampleTextarea" rows="3">${goodBad}</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="formFile" class="form-label mt-4">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">프로필사진</font>
+                        </font>
+                    </label>
+                    <input name="photo" class="form-control" type="file" id="formFile">
+                </div>
+
+            </fieldset>
+            <div>
+                코딩스타일, 자기소개, 기술스택
+            </div>
+            <div>                    
+                <button type="submit" id="submitBtn">수정</button>
+                <button type="button" id="removeBtn">취소</button>
+            </div>
+
+        </form>
+
+    </div>
+</body>
+
+</html>
