@@ -10,7 +10,7 @@ const selector = (element) => document.querySelector(element);
 const guestbookTemplate = (id, author, content, date) => {
   selector(
     "#itemList"
-  ).innerHTML += `<div class="item" id="${id}"><span class="date">${date}</span><p class="author">${author}</p><img class="cancle" src="../../photos/cancle.svg" alt="${author}의 방명록 수정을 취소하는 아이콘"><img class="insert" src="../../photos/pencil.svg" alt="${author}의 방명록을 수정하는 아이콘"><img class="update" src="../../photos/send.svg" alt="${author}의 수정한 방명록을 등록하는 아이콘"><img class="delete" src="../../photos/trash.svg" alt="${author}의 방명록을 삭제하는 아이콘"><p class="content">${content}</p></div>`;
+  ).innerHTML += `<div class="item" id="${id}"><span class="date">${date}</span><p class="author">${author}</p><img class="cancle" src="../../photos/cancle.svg" alt="${author}의 방명록 수정을 취소하는 아이콘"><img class="insert" src="../../photos/pencil.svg" alt="${author}의 방명록을 수정하는 아이콘"><img class="update" src="../../photos/send.svg" alt="${author}의 수정한 방명록을 등록하는 아이콘"><img class="delete" src="../../photos/trash.svg" alt="${author}의 방명록을 삭제하는 아이콘"><pre class="content">${content}</pre></div>`;
 };
 let isLoading = true;
 let isCreateTextarea = false;
@@ -98,9 +98,10 @@ window.addEventListener("DOMContentLoaded", async () => {
 
         isCreateTextarea = true;
 
-        const textBox = document.createElement("textarea");
+        const textBox = document.createElement("div");
 
         textBox.setAttribute("class", "content");
+        textBox.setAttribute("contentEditable", true);
         textBox.setAttribute("cols", 30);
         textBox.setAttribute("rows", 10);
         textBox.innerText = prevContent;
@@ -113,7 +114,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
 document.addEventListener("click", async (e) => {
   if (e.target.className === "update") {
-    const content = e.target.parentNode.lastChild.value;
+    const content = e.target.parentNode.lastChild.innerText;
     const id = e.target.parentNode.id;
 
     if (content === "") {
@@ -143,10 +144,10 @@ document.addEventListener("click", async (e) => {
 
     e.target.parentNode.removeChild(e.target.parentNode.lastChild);
 
-    const pBox = document.createElement("p");
+    const pBox = document.createElement("pre");
 
     pBox.setAttribute("class", "content");
-    pBox.innerText = prevContent;
+    pBox.innerHTML = prevContent;
 
     e.target.parentNode.appendChild(pBox);
 
