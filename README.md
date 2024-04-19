@@ -58,5 +58,7 @@
 + Tool, 버전관리
   + <img src="https://img.shields.io/badge/VScode-007ACC?style=flat-square&logo=visualstudiocode&logoColor=fff"/> <img src="https://img.shields.io/badge/git-F05032?style=flat-square&logo=git&logoColor=FFFFFF"/>
 
+## 결과 화면
+
 ![image](https://github.com/spartaCodingGoldangyi/miniproject/assets/47583083/c3be596d-ff7c-4384-a9e5-26b1eecf0640)
 ![image](https://github.com/spartaCodingGoldangyi/miniproject/assets/47583083/bb70e175-6989-42a4-a12f-081b14191ee1)
