@@ -1,6 +1,7 @@
 # 스파르타코딩클럽 Kotlin 2기 골댕이(7조) MiniProject
 
-[1주차 미니 프로젝트 발표.pdf](https://github.com/spartaCodingGoldangyi/miniproject/files/15031950/1.pdf)
+## 발표자료
+**[1주차 미니 프로젝트 발표.pdf](https://github.com/spartaCodingGoldangyi/miniproject/files/15031950/1.pdf)**
 
 ## 목차
 + [프로젝트 소개](#프로젝트-소개)
