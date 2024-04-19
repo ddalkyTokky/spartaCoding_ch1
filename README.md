@@ -1,7 +1,7 @@
 # 스파르타코딩클럽 Kotlin 2기 골댕이(7조) MiniProject
 
 ## 발표자료
-**[1주차 미니 프로젝트 발표.pdf](https://github.com/spartaCodingGoldangyi/miniproject/files/15031950/1.pdf)**
+**[1주차 미니 프로젝트 발표.pdf](https://github.com/spartaCodingGoldangyi/miniproject/files/15032421/1.pdf)**
 
 ## 목차
 + [프로젝트 소개](#프로젝트-소개)
@@ -14,8 +14,8 @@
 스파르타코딩클럽 Kotlin 2기 골댕이(7조)의 팀원들의 프로필과 방문 소감을 작성할 수 있는 방명록을 제공하는 서비스
 <br/>
 
-![image](https://github.com/spartaCodingGoldangyi/miniproject/assets/47583083/0f8c9cd6-1366-4bd8-a2d5-114825d7af73)
-![image](https://github.com/spartaCodingGoldangyi/miniproject/assets/47583083/f898178c-c25f-44db-aeb9-a3a99455b690)
+![image](https://github.com/spartaCodingGoldangyi/miniproject/assets/47583083/1fec0937-5620-4b3c-b2d8-5fc7ae922376)
+![image](https://github.com/spartaCodingGoldangyi/miniproject/assets/47583083/b4adb635-2bf8-4820-885b-82403cda1587)
 ![image](https://github.com/spartaCodingGoldangyi/miniproject/assets/47583083/7ff8d3dc-4367-4511-b34c-845d3845a170)
 
 ---
