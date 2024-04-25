@@ -1,5 +1,7 @@
 # 스파르타코딩클럽 Kotlin 2기 골댕이(7조) MiniProject
 
+## [시연영상](https://www.youtube.com/watch?v=5huwV1fVAa4)
+
 ## 발표자료
 **[1주차 미니 프로젝트 발표.pdf](https://github.com/spartaCodingGoldangyi/miniproject/files/15032421/1.pdf)**
 
